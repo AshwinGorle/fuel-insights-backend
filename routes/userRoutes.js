@@ -29,6 +29,6 @@ router.post(
 //adminRoutes
 
 // router.post('/get-knowledgebases', checkUserAuth , restrictToAdmin,UserController.approveCourse)
-router.post("/audit-course/:courseId", restrictTo(["admin"]) ,UserController.approveCourse);
+//router.post("/audit-course/:courseId", restrictTo(["admin"]) ,UserController.approveCourse);
 
 export default router;
