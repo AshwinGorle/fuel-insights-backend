@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(checkForUserAuthentication);
 
 app.use('/user',userRoutes);
-app.use('/fuelEconomy',fuelEconomyRouter);
+app.use('/fuel-economy',fuelEconomyRouter);
 
 
  app.get('/', (req, res)=>{
