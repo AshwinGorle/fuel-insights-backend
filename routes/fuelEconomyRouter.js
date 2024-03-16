@@ -1,9 +1,10 @@
  import express from "express"; 
 import FuelEconomyController from '../controllers/fuelEconomyController.js'
+import { restrictTo } from "../middlewares/checkUserAuth.js";
  const router = express.Router();
 
 
- router.post('/analysis', FuelEconomyController.analysis);
+ router.post('/analysis',restrictTo(["all"]) ,FuelEconomyController.analysis);
 
 
  export default router;
