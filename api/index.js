@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors'
 import connectDB from '../config/connect.js'
 import userRoutes from '../routes/userRoutes.js'
+import fuelEconomyRouter from '../routes/fuelEconomyRouter.js'
 import { checkForUserAuthentication } from '../middlewares/checkUserAuth.js';
 
 const app = express();
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(checkForUserAuthentication);
 
 app.use('/user',userRoutes);
+app.use('/fuelEconomy',fuelEconomyRouter);
 
 
  app.get('/', (req, res)=>{
