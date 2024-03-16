@@ -20,6 +20,13 @@ import mongoose from "mongoose";
 
 // })
 
+const analysisResultSchema = mongoose.Schema({
+    averageFuelEconomy: { type: Number },
+    userFuelEconomy: { type: Number },
+    classification: { type: String },
+    vehicleClass : {type : String}
+});
+
 const userSchema = mongoose.Schema({
     name : {type : String, required : true, trim : true},
     email : {type : String, required : true, trim : true},
@@ -27,10 +34,7 @@ const userSchema = mongoose.Schema({
     tc : {type : Boolean, required : true},
     avatar: {type : String },
     phone : {type : String},
-    fuelData : {
-        type :  mongoose.Types.ObjectId,
-        reference : 'FuelModel',
-    } ,
+    fuelData: [analysisResultSchema],
 
     
 
@@ -52,6 +56,8 @@ const userSchema = mongoose.Schema({
    
 
 })
+
+
 
 const UserModel = mongoose.model('User', userSchema);
 

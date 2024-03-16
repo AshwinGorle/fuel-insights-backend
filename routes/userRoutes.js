@@ -15,6 +15,8 @@ router.post(
   "/reset-password/:userId/:token",
   UserController.resetUserPasswordWithLink
 );
+                                                                            
+// router.get('/')
 
 //protected routes
 router.get("/get-users/:role", restrictTo(["all"]), UserController.getUsers);

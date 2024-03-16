@@ -14,6 +14,7 @@ class UserController {
       role = "student",
       tc = true,
       phone,
+      fuelData
     } = req.body;
    
     const user = await UserModel.findOne({ email: email });
@@ -32,7 +33,7 @@ class UserController {
               role,
               tc: Boolean(tc),
               phone,
-
+              fuelData
             });
             await doc.save();
             const savedUser = await UserModel.findOne({ email: email });

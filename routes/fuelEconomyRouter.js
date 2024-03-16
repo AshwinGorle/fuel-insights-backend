@@ -5,6 +5,7 @@ import { restrictTo } from "../middlewares/checkUserAuth.js";
 
 
  router.post('/analysis',restrictTo(["all"]) ,FuelEconomyController.analysis);
+ router.get('/get-trip-data',restrictTo(["all"]) ,FuelEconomyController.getAllTripData);
 
 
  export default router;
